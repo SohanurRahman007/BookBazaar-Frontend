@@ -1,9 +1,10 @@
+"use client";
+
+import { Toaster } from "@/components/ui/sonner";
 import BookLoader from "@/lib/BookLoader";
 import { persistor, store } from "@/store/store";
-import { Book } from "lucide-react";
 import { Provider } from "react-redux";
 import { PersistGate } from "redux-persist/integration/react";
-import { Toaster } from "sonner";
 
 export default function LayoutWrapper({
   children,
