@@ -29,5 +29,20 @@ const userSlice = createSlice({
         (state.isLoggedIn = false),
         (state.isEmailVerified = false);
     },
+    toggleLoginDialog: (state) => {
+      state.isLoginDialogOpen = !state.isLoginDialogOpen;
+    },
+    authStatus: (state) => {
+      state.isLoggedIn = true;
+    },
   },
 });
+
+export const {
+  setUser,
+  setEmailVerified,
+  logout,
+  toggleLoginDialog,
+  authStatus,
+} = userSlice.actions;
+export default userSlice.reducer;
