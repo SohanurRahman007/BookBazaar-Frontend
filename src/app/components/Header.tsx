@@ -38,7 +38,7 @@ export const Header = () => {
           </div>
         </div>
 
-        {/* <div className="flex items-center gap-4">
+        <div className="flex items-center gap-4">
           <Link href="/book-sell">
             <Button
               variant="secondary"
@@ -47,7 +47,7 @@ export const Header = () => {
               Sell Used Book
             </Button>
           </Link>
-        </div> */}
+        </div>
       </div>
     </header>
   );
