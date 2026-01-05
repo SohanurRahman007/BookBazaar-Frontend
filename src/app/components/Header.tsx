@@ -19,7 +19,7 @@ export const Header = () => {
             className="h-15 w-auto"
           />
         </Link>
-        {/* <div className="flex flex-1 items-center justify-center px-4 max-w-xl">
+        <div className="flex flex-1 items-center justify-center px-4 max-w-xl">
           <div className="relative w-full">
             <Input
               type="text"
@@ -36,7 +36,7 @@ export const Header = () => {
               <Search className="w-5 h-5" />
             </Button>
           </div>
-        </div> */}
+        </div>
 
         {/* <div className="flex items-center gap-4">
           <Link href="/book-sell">
