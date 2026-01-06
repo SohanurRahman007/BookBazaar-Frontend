@@ -11,6 +11,9 @@ import {
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu";
 import { Input } from "@/components/ui/input";
+import { toggleLoginDialog } from "@/store/slice/userSlice";
+import { RootState } from "@/store/store";
+// import { RootState } from "@reduxjs/toolkit/query/react";
 import { profile } from "console";
 import {
   BookLock,
@@ -29,21 +32,38 @@ import {
 } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
+import { useRouter } from "next/navigation";
 import React, { useState } from "react";
+import { set } from "react-hook-form";
+import { useDispatch, useSelector } from "react-redux";
 
 export const Header = () => {
   const [isDropdownOpen, setDropdownOpen] = useState(false);
+  const router = useRouter();
+  const dispatch = useDispatch();
+  const isLoginOpen = useSelector(
+    (state: RootState) => state.user.isLoginDialogOpen
+  );
   const user = {
     profilePicture: "",
-    name: "",
-    email: "",
+    name: "sr",
+    email: "sohanuractive007@gmail.com",
   };
 
   const userPlaceholder = "";
 
-  const handleLoginClick = () => {};
-  const handleProtectionNavigation = (href) => {
-    console.log(href);
+  const handleLoginClick = () => {
+    dispatch(toggleLoginDialog());
+    setDropdownOpen(false);
+  };
+  const handleProtectionNavigation = (href: string) => {
+    if (user) {
+      router.push(href);
+      setDropdownOpen(false);
+    } else {
+      dispatch(toggleLoginDialog());
+      setDropdownOpen(false);
+    }
   };
 
   const handleLogout = () => {};
@@ -153,7 +173,6 @@ export const Header = () => {
           ) : (
             <button
               key={index}
-              variant="ghost"
               className="flex w-full justify-start items-center gap-3 px-4 py-3 text-sm hover:bg-gray-200 rounded-xl"
               onClick={item.onclick}
             >
@@ -227,6 +246,20 @@ export const Header = () => {
               <MenuItems />
             </DropdownMenuContent>
           </DropdownMenu>
+
+          <Link href="/checkout/cart">
+            <div className="relative ">
+              <Button variant="ghost" className="relative">
+                <ShoppingCart className="w-5 h-5 mr-2 relative" />
+                Cart
+              </Button>
+              {user && (
+                <span className="absolute -top-1 -right-2 bg-red-500 text-white text-xs w-5 h-5 rounded-full flex items-center justify-center">
+                  3
+                </span>
+              )}
+            </div>
+          </Link>
         </div>
       </div>
     </header>
