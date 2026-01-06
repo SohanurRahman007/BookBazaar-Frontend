@@ -13,8 +13,11 @@ import {
 import { Input } from "@/components/ui/input";
 import { profile } from "console";
 import {
+  BookLock,
   ChevronRight,
+  FileTerminal,
   Heart,
+  HelpCircle,
   Lock,
   LogOut,
   Package,
@@ -106,17 +109,17 @@ export const Header = () => {
       href: "/about-us",
     },
     {
-      icon: <User2 className=" h-5 w-5" />,
+      icon: <FileTerminal className=" h-5 w-5" />,
       label: "Terms & use",
       href: "/terms-use",
     },
     {
-      icon: <User2 className=" h-5 w-5" />,
+      icon: <BookLock className=" h-5 w-5" />,
       label: "Privacy Policy",
       href: "/privacy-policy",
     },
     {
-      icon: <User2 className=" h-5 w-5" />,
+      icon: <HelpCircle className=" h-5 w-5" />,
       label: "Help & Support",
       href: "/how-it-works",
     },
@@ -148,7 +151,7 @@ export const Header = () => {
               <ChevronRight className="w-4 h-4 ml-auto" />
             </Link>
           ) : (
-            <Button
+            <button
               key={index}
               variant="ghost"
               className="flex w-full justify-start items-center gap-3 px-4 py-3 text-sm hover:bg-gray-200 rounded-xl"
@@ -157,7 +160,7 @@ export const Header = () => {
               {item.icon}
               <span>{item.label}</span>
               <ChevronRight className="w-4 h-4 ml-auto" />
-            </Button>
+            </button>
           );
         })}
       </div>
