@@ -1,3 +1,4 @@
+"use client";
 import {
   BookOpen,
   Camera,
@@ -9,6 +10,8 @@ import {
   Truck,
   Wallet,
 } from "lucide-react";
+import { useEffect, useState } from "react";
+import Image from "next/image";
 
 export default function Home() {
   const bannerImages = [
@@ -90,5 +93,34 @@ export default function Home() {
       icon: <Truck className="h-8 w-8 text-primary" />,
     },
   ];
-  return <main></main>;
+  const [currentImage, setCurrentImage] = useState(0);
+  useEffect(() => {
+    const timer = setInterval(() => {
+      setCurrentImage((prevImage) => (prevImage + 1) % bannerImages.length);
+    }, 5000); // Change image every 5 seconds
+    return () => clearInterval(timer);
+  }, []);
+  return (
+    <main className="min-h-screen">
+      <section className="relative h-[600px] overflow-hidden">
+        {bannerImages.map((image, index) => (
+          <div
+            key={index}
+            className={`absolute inset-0 transition-opacity duration-1000 ${
+              currentImage === index ? "opacity-100" : "opacity-0"
+            }`}
+          >
+            <Image
+              src={image}
+              alt="Banner"
+              priority={index === 0}
+              fill
+              className="object-cover"
+            />
+            <div className="relative inset-0 bg-black/50"></div>
+          </div>
+        ))}
+      </section>
+    </main>
+  );
 }
