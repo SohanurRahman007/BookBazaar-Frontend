@@ -5,6 +5,7 @@ import {
   CreditCard,
   Library,
   Search,
+  ShoppingBag,
   Store,
   Tag,
   Truck,
@@ -12,6 +13,8 @@ import {
 } from "lucide-react";
 import { useEffect, useState } from "react";
 import Image from "next/image";
+import { Button } from "@/components/ui/button";
+import Link from "next/link";
 
 export default function Home() {
   const bannerImages = [
@@ -117,9 +120,49 @@ export default function Home() {
               fill
               className="object-cover"
             />
-            <div className="relative inset-0 bg-black/50"></div>
+            <div className="absolute inset-0 bg-black/50" />
           </div>
         ))}
+
+        <div className="container mx-auto relative px-4 h-full flex flex-col items-center justify-center text-white">
+          <h1 className="text-4xl md:text-6xl font-bold mb-8">
+            Buy and Sell Used Books Bangladesh
+          </h1>
+          <div className=" flex flex-col gap-5 sm:flex-row">
+            <Button
+              size={"lg"}
+              className="group bg-gradient-to-r from-blue-600 to-blue-700 hover:from-blue-700 hover:to-blue-800 text-white px-8 py-7 rounded-xl"
+            >
+              <div className="flex item-center gap-3">
+                <div className="bg-white/20 p-2 rounded-lg group-hover:bg-white/30 transition-colors">
+                  <ShoppingBag className="h-6 w-6" />
+                </div>
+                <Link href="/books">
+                  <div className="text-left">
+                    <div className="text-sm opacity-90">Start Shopping</div>
+                    <div className="font-semibold">Buy Used Books</div>
+                  </div>
+                </Link>
+              </div>
+            </Button>
+            <Button
+              size={"lg"}
+              className="group bg-gradient-to-r from-yellow-600 to-yellow-700 hover:from-yellow-700 hover:to-yellow-800 text-black px-8 py-7 rounded-xl"
+            >
+              <div className="flex item-center gap-3">
+                <div className="bg-black/20 p-2 rounded-lg group-hover:bg-black/30 transition-colors">
+                  <ShoppingBag className="h-6 w-6" />
+                </div>
+                <Link href="/book-sell">
+                  <div className="text-left">
+                    <div className="text-sm opacity-90">Start Selling</div>
+                    <div className="font-semibold">Sell Old Books</div>
+                  </div>
+                </Link>
+              </div>
+            </Button>
+          </div>
+        </div>
       </section>
     </main>
   );
