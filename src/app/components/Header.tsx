@@ -11,6 +11,13 @@ import {
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu";
 import { Input } from "@/components/ui/input";
+import {
+  Sheet,
+  SheetContent,
+  SheetHeader,
+  SheetTitle,
+  SheetTrigger,
+} from "@/components/ui/sheet";
 import { toggleLoginDialog } from "@/store/slice/userSlice";
 import { RootState } from "@/store/store";
 // import { RootState } from "@reduxjs/toolkit/query/react";
@@ -23,6 +30,7 @@ import {
   HelpCircle,
   Lock,
   LogOut,
+  Menu,
   Package,
   PiggyBank,
   Search,
@@ -261,6 +269,74 @@ export const Header = () => {
             </div>
           </Link>
         </div>
+      </div>
+
+      {/* Mobile Header */}
+      <div className="flex lg:hidden container mx-auto items-center justify-between p-4  ">
+        <Sheet>
+          <SheetTrigger asChild>
+            <Button variant="ghost" size="icon">
+              <Menu className="w-6 h-6" />
+            </Button>
+          </SheetTrigger>
+          <SheetContent side="left" className="w-80 p-0">
+            <SheetHeader>
+              <SheetTitle className="sr-only"></SheetTitle>
+            </SheetHeader>
+
+            <div className="border-b p-4">
+              <Link href={"/"}>
+                <Image
+                  src="/images/web-logo.png"
+                  alt="mobile Logo"
+                  width={150}
+                  height={40}
+                  className="h-10 w-auto"
+                />
+              </Link>
+            </div>
+            <MenuItems className="py-2" />
+          </SheetContent>
+        </Sheet>
+        <Link href={"/"} className="flex items-center">
+          <Image
+            src="/images/web-logo.png"
+            alt="Web Logo"
+            width={450}
+            height={100}
+            className=" h-6 w-20 md:h-10 md:w-auto"
+          />
+        </Link>
+        <div className="flex flex-1 items-center justify-center px-4 max-w-xl">
+          <div className="relative w-full">
+            <Input
+              type="text"
+              placeholder="Search Books"
+              className="w-full pr-10"
+              value=""
+              // onChange={() => {}}
+            />
+            <Button
+              size="icon"
+              variant={"ghost"}
+              className="absolute right-0 top-1/2 -translate-y-1/2"
+            >
+              <Search className="w-5 h-5" />
+            </Button>
+          </div>
+        </div>
+        <Link href="/checkout/cart">
+          <div className="relative ">
+            <Button variant="ghost" className="relative">
+              <ShoppingCart className="w-5 h-5 mr-2 relative" />
+            </Button>
+            {user && (
+              <span className="absolute -top-1 -right-2 bg-red-500 text-white text-xs w-5 h-5 rounded-full flex items-center justify-center">
+                3
+              </span>
+            )}
+          </div>
+        </Link>
       </div>
     </header>
   );
