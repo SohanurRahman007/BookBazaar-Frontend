@@ -180,7 +180,7 @@ export default function Home() {
       {/* how to sell section */}
       <section className="py-16 bg-amber-50">
         <div className="container mx-auto px-4">
-          <div className="text-center mb-4">
+          <div className="text-center mb-8">
             <h3 className="text-2xl md:text-3xl font-bold mb-4">
               How to Sell Your Old Books on BookBazaar
             </h3>
@@ -188,6 +188,25 @@ export default function Home() {
               Sell your old books easily and quickly on BookBazaar. Follow these
               simple steps to get started.
             </p>
+          </div>
+          <div className="grid md:grid-cols-3 gap-8 relative">
+            <div className="hidden md:block absolute top-1/2 left-1/4 right-1/4 h-0.5 border-t border-dotted border-gray-300 -z-10"></div>
+
+            {sellSteps.map((step, index) => (
+              <div key={index} className="relative flex flex-col h-full">
+                <div className="bg-white rounded-xl p-8 shadow-xl text-center flex-grow flex flex-col">
+                  <div className=" absolute text-gray-900 bg-yellow-500 top-2 left-14 -translate-1/2 px-4 py-1 rounded-full text-sm font-medium z-10">
+                    {step.step}
+                  </div>
+                  <div className="h-16 w-16 bg-primary/10 flex items-center justify-center rounded-full">
+                    {step.icon}
+                  </div>
+
+                  <h3 className="font-semibold mb-2">{step.title}</h3>
+                  <p className="text-gray-600 flex-grow">{step.description}</p>
+                </div>
+              </div>
+            ))}
           </div>
         </div>
       </section>
