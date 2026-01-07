@@ -182,7 +182,7 @@ export default function Home() {
         <div className="container mx-auto px-4">
           <div className="text-center mb-8">
             <h3 className="text-2xl md:text-3xl font-bold mb-4">
-              How to Sell Your Old Books on BookBazaar
+              How to SELL your old books online on BookBazaar?
             </h3>
             <p className="text-gray-600 max-w-2xl mx-auto">
               Sell your old books easily and quickly on BookBazaar. Follow these
@@ -195,10 +195,10 @@ export default function Home() {
             {sellSteps.map((step, index) => (
               <div key={index} className="relative flex flex-col h-full">
                 <div className="bg-white rounded-xl p-8 shadow-xl text-center flex-grow flex flex-col">
-                  <div className=" absolute text-gray-900 bg-yellow-500 top-2 left-14 -translate-1/2 px-4 py-1 rounded-full text-sm font-medium z-10">
+                  <div className=" absolute text-gray-900 bg-yellow-500 top-6 left-14 -translate-1/2 px-4 py-1 rounded-full text-sm font-medium z-10">
                     {step.step}
                   </div>
-                  <div className="h-16 w-16 bg-primary/10 flex items-center justify-center rounded-full">
+                  <div className="h-14 w-14 bg-primary/10 flex items-center justify-center mx-auto rounded-full">
                     {step.icon}
                   </div>
 
@@ -212,6 +212,38 @@ export default function Home() {
       </section>
 
       {/* how to buy section */}
+      <section className="py-16 bg-gradient-to-b to-gray-100 from-white">
+        <div className="container mx-auto px-4">
+          <div className="text-center mb-8">
+            <h3 className="text-2xl md:text-3xl font-bold mb-4">
+              How to BUY second hand books online on BookBazzar?
+            </h3>
+            <p className="text-gray-600 max-w-2xl mx-auto">
+              Saving some good amount of money by buying used books is just 3
+              steps away from you.
+            </p>
+          </div>
+          <div className="grid md:grid-cols-3 gap-8 relative">
+            <div className="hidden md:block absolute top-1/2 left-1/4 right-1/4 h-0.5 border-t border-dotted border-gray-300 -z-10"></div>
+
+            {buySteps.map((step, index) => (
+              <div key={index} className="relative flex flex-col h-full">
+                <div className="bg-yellow-400 rounded-xl p-8 shadow-xl text-center flex-grow flex flex-col">
+                  <div className=" absolute text-white bg-primary top-6 left-14 -translate-1/2 px-4 py-1 rounded-full text-sm font-medium z-10">
+                    {step.step}
+                  </div>
+                  <div className="h-14 w-14 bg-primary/10 flex items-center justify-center mx-auto rounded-full">
+                    {step.icon}
+                  </div>
+
+                  <h3 className="font-semibold mb-2">{step.title}</h3>
+                  <p className="text-gray-600 flex-grow">{step.description}</p>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
     </main>
   );
 }
