@@ -15,6 +15,7 @@ import { useEffect, useState } from "react";
 import Image from "next/image";
 import { Button } from "@/components/ui/button";
 import Link from "next/link";
+import { NewBooks } from "./components/NewBooks";
 
 export default function Home() {
   const bannerImages = [
@@ -125,7 +126,7 @@ export default function Home() {
         ))}
 
         <div className="container mx-auto relative px-4 h-full flex flex-col items-center justify-center text-white">
-          <h1 className="text-4xl md:text-6xl font-bold mb-8">
+          <h1 className="text-3xl  md:text-5xl font-bold mb-8">
             Buy and Sell Used Books Bangladesh
           </h1>
           <div className=" flex flex-col gap-5 sm:flex-row">
@@ -164,6 +165,17 @@ export default function Home() {
           </div>
         </div>
       </section>
+
+      <NewBooks />
+
+      <Button
+        size={"lg"}
+        className="flex mt-10 mb-10 mx-auto hover:bg-yellow-600 bg-yellow-500 px-8 py-6 rounded-xl"
+      >
+        <Link href="/books">
+          <div className="text-sm">Explore All Books</div>
+        </Link>
+      </Button>
     </main>
   );
 }
