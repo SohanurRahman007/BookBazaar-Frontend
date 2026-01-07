@@ -208,10 +208,9 @@ export const Header = () => {
           <div className="relative w-full">
             <Input
               type="text"
-              placeholder="Book Name | Author| Subject | Publisher"
+              placeholder="Book Name | Author | Subject | Publisher"
               className="w-full pr-10"
-              value=""
-              // onChange={() => {}}
+              defaultValue=""
             />
             <Button
               size="icon"
@@ -310,9 +309,9 @@ export const Header = () => {
               type="text"
               placeholder="Search Books"
               className="w-full pr-10"
-              value=""
-              // onChange={() => {}}
+              defaultValue=""
             />
+
             <Button
               size="icon"
               variant={"ghost"}

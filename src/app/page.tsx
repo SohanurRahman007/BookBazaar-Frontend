@@ -16,6 +16,7 @@ import Image from "next/image";
 import { Button } from "@/components/ui/button";
 import Link from "next/link";
 import { NewBooks } from "./components/NewBooks";
+import { Card, CardContent } from "@/components/ui/card";
 
 export default function Home() {
   const bannerImages = [
@@ -198,7 +199,7 @@ export default function Home() {
                   <div className=" absolute text-gray-900 bg-yellow-500 top-6 left-14 -translate-1/2 px-4 py-1 rounded-full text-sm font-medium z-10">
                     {step.step}
                   </div>
-                  <div className="h-14 w-14 bg-primary/10 flex items-center justify-center mx-auto rounded-full">
+                  <div className="h-14 w-14 bg-primary/10 flex items-center justify-center mx-auto rounded-full mb-2">
                     {step.icon}
                   </div>
 
@@ -232,7 +233,7 @@ export default function Home() {
                   <div className=" absolute text-white bg-primary top-6 left-14 -translate-1/2 px-4 py-1 rounded-full text-sm font-medium z-10">
                     {step.step}
                   </div>
-                  <div className="h-14 w-14 bg-primary/10 flex items-center justify-center mx-auto rounded-full">
+                  <div className="h-14 w-14 bg-primary/10 flex items-center justify-center mx-auto rounded-full mb-2">
                     {step.icon}
                   </div>
 
@@ -240,6 +241,47 @@ export default function Home() {
                   <p className="text-gray-600 flex-grow">{step.description}</p>
                 </div>
               </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* bolgs post */}
+      <section className="py-16 bg-[rgb(221,232,254)]">
+        <div className="container mx-auto px-4">
+          <h2>
+            Read from our <span className="text-primary">Blog</span>
+          </h2>
+          <div className="grid md:grid-cols-3 gap-8">
+            {blogPosts.map((post, index) => (
+              <Card
+                key={index}
+                className="flex flex-col overflow-hidden transition-all duration-300 hover:shadow-xl"
+              >
+                <CardContent className="p-0 flex flex-col h-full">
+                  <div className="relative h-48 overflow-hidden">
+                    <Image
+                      src={post.imageSrc}
+                      alt={post.title}
+                      layout="fill"
+                      objectFit="cover"
+                      className="transition-transform duration-300 hover:scale-105"
+                    />
+                    <div className="flex flex-col flex-grow p-6">
+                      <h3 className="mb-2 items-center flex ga-2 text-xl font-semibold">
+                        <div className="bg-primary/10 p-2 rounded-full">
+                          {post.icon}
+                        </div>
+
+                        <span className="flex-grow">{post.title}</span>
+                      </h3>
+                      <span className="text-gray-600 flex-grow text-sm">
+                        {post.description}
+                      </span>
+                    </div>
+                  </div>
+                </CardContent>
+              </Card>
             ))}
           </div>
         </div>
