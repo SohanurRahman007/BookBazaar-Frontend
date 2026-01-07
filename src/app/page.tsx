@@ -126,7 +126,7 @@ export default function Home() {
         ))}
 
         <div className="container mx-auto relative px-4 h-full flex flex-col items-center justify-center text-white">
-          <h1 className="text-3xl  md:text-5xl font-bold mb-8">
+          <h1 className="text-3xl text-center md:text-5xl font-bold mb-8">
             Buy and Sell Used Books Bangladesh
           </h1>
           <div className=" flex flex-col gap-5 sm:flex-row">
@@ -166,8 +166,8 @@ export default function Home() {
         </div>
       </section>
 
+      {/* New Books Section */}
       <NewBooks />
-
       <Button
         size={"lg"}
         className="flex mt-10 mb-10 mx-auto hover:bg-yellow-600 bg-yellow-500 px-8 py-6 rounded-xl"
@@ -176,6 +176,23 @@ export default function Home() {
           <div className="text-sm">Explore All Books</div>
         </Link>
       </Button>
+
+      {/* how to sell section */}
+      <section className="py-16 bg-amber-50">
+        <div className="container mx-auto px-4">
+          <div className="text-center mb-4">
+            <h3 className="text-2xl md:text-3xl font-bold mb-4">
+              How to Sell Your Old Books on BookBazaar
+            </h3>
+            <p className="text-gray-600 max-w-2xl mx-auto">
+              Sell your old books easily and quickly on BookBazaar. Follow these
+              simple steps to get started.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      {/* how to buy section */}
     </main>
   );
 }
