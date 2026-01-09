@@ -1,7 +1,7 @@
 export const books = [
   {
     _id: "1",
-    images: ["image1.jpg", "image2.jpg"],
+    images: [],
     title: "The Alchemist",
     category: "Reading Books (Novels)",
     condition: "Excellent",
@@ -23,7 +23,7 @@ export const books = [
   },
   {
     _id: "2",
-    images: ["image3.jpg", "image4.jpg"],
+    images: [],
     title: "7 Habits of Highly Effective People",
     category: "Reading Books (Business)",
     condition: "Good",
@@ -48,7 +48,7 @@ export const books = [
   },
   {
     _id: "3",
-    images: ["image5.jpg"],
+    images: [],
     title: "Ignited Minds",
     category: "Reading Books (Motivation)",
     condition: "Fair",
@@ -69,7 +69,7 @@ export const books = [
   },
   {
     _id: "4",
-    images: ["image6.jpg"],
+    images: [],
     title: "Introduction to Algorithms",
     category: "College Books (Higher Education Textbooks)",
     condition: "Excellent",
@@ -94,7 +94,7 @@ export const books = [
   },
   {
     _id: "5",
-    images: ["image7.jpg"],
+    images: [],
     title: "Data Structures and Algorithms Made Easy",
     category: "College Books (Higher Education Textbooks)",
     condition: "Good",
@@ -113,7 +113,7 @@ export const books = [
   },
   {
     _id: "6",
-    images: ["image8.jpg"],
+    images: [],
     title: "The Great Gatsby",
     category: "Reading Books (Novels)",
     condition: "Excellent",
@@ -138,7 +138,7 @@ export const books = [
   },
   {
     _id: "7",
-    images: ["image9.jpg"],
+    images: [],
     title: "Thinking, Fast and Slow",
     category: "Reading Books (Psychology)",
     condition: "Good",
@@ -157,7 +157,7 @@ export const books = [
   },
   {
     _id: "8",
-    images: ["image10.jpg"],
+    images: [],
     title: "The Catcher in the Rye",
     category: "Reading Books (Novels)",
     condition: "Fair",
@@ -182,7 +182,7 @@ export const books = [
   },
   {
     _id: "9",
-    images: ["image11.jpg"],
+    images: [],
     title: "Becoming",
     category: "Reading Books (Biography)",
     condition: "Excellent",
@@ -201,7 +201,7 @@ export const books = [
   },
   {
     _id: "10",
-    images: ["image12.jpg"],
+    images: [],
     title: "Sapiens",
     category: "Reading Books (History)",
     condition: "Good",
