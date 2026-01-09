@@ -1,5 +1,6 @@
 "use client";
 import {
+  ArrowRight,
   BookOpen,
   Camera,
   CreditCard,
@@ -259,13 +260,13 @@ export default function Home() {
                 className="flex flex-col overflow-hidden transition-all duration-300 hover:shadow-xl"
               >
                 <CardContent className="p-0 flex flex-col h-full">
-                  <div className="relative h-48 overflow-hidden">
+                  <div className="relative h-48 w-full">
                     <Image
                       src={post.imageSrc}
                       alt={post.title}
                       layout="fill"
                       objectFit="cover"
-                      className="transition-transform duration-300 hover:scale-105"
+                      className="object-cover transition-transform duration-300 hover:scale-105"
                     />
                     <div className="flex flex-col flex-grow p-6">
                       <h3 className="mb-2 items-center flex ga-2 text-xl font-semibold">
@@ -286,7 +287,17 @@ export default function Home() {
                       <div className="bg-primary/10 p-2 rounded-full">
                         {post.icon}
                       </div>
+                      <span className="flex-grow">{post.title}</span>
                     </h3>
+                    <p className="text-gray-600 text-sm flex-grow">
+                      {post.description}
+                    </p>
+                    <Button
+                      variant={"link"}
+                      className="mt-4 p-0 flex items-center text-primary"
+                    >
+                      Read More <ArrowRight className="w-4 h-4" />
+                    </Button>
                   </div>
                 </CardContent>
               </Card>
