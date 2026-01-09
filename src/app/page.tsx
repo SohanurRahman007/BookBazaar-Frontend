@@ -249,7 +249,7 @@ export default function Home() {
       {/* bolgs post */}
       <section className="py-16 bg-[rgb(221,232,254)]">
         <div className="container mx-auto px-4">
-          <h2>
+          <h2 className="text-center text-3xl mb-12 font-bold">
             Read from our <span className="text-primary">Blog</span>
           </h2>
           <div className="grid md:grid-cols-3 gap-8">
@@ -279,6 +279,14 @@ export default function Home() {
                         {post.description}
                       </span>
                     </div>
+                  </div>
+
+                  <div className="flex flex-col flex-grow p-6">
+                    <h3 className="text-xl font-semibold mb-2 items-center flex gap-2">
+                      <div className="bg-primary/10 p-2 rounded-full">
+                        {post.icon}
+                      </div>
+                    </h3>
                   </div>
                 </CardContent>
               </Card>
