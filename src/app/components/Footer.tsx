@@ -9,7 +9,6 @@ import {
   Shield,
 } from "lucide-react";
 import Link from "next/link";
-import React from "react";
 
 const Footer = () => {
   return (
@@ -147,6 +146,9 @@ const Footer = () => {
           {/* Bottom Divider */}
           <Separator className="my-4" />
         </>
+        <div className="text-center text-md mt-4">
+          <h3>© 2026 BookBazar. All rights reserved.</h3>{" "}
+        </div>
       </div>
     </footer>
   );
