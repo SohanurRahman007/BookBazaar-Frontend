@@ -64,6 +64,36 @@ export const NewBooks = () => {
                                       height={300}
                                       className="mb-4 h-[200px] w-full object-cover rounded-md"
                                     />
+                                    {calculateDiscountPrice(
+                                      book.price,
+                                      book.finalPrice
+                                    ) > 0 && (
+                                      <span className="absolute top-0 left-2 bg-red-500 text-white text-xs font-bold px-2 py-1 rounded">
+                                        {calculateDiscountPrice(
+                                          book.price,
+                                          book.finalPrice
+                                        )}
+                                        % OFF
+                                      </span>
+                                    )}
+                                  </div>
+                                  <h1 className="mb-2 line-clamp-2 text-sm font-semibold">
+                                    {book.title}
+                                  </h1>
+                                  <div className="flex items-center justify-between">
+                                    <div className="flex items-baseline gap-2">
+                                      <span className="text-lg font-bold">
+                                        ৳{book.finalPrice}
+                                      </span>
+                                      {book.price && (
+                                        <span className="text-sm text-gray-400 line-through decoration-gray-500">
+                                          ৳{book.price}
+                                        </span>
+                                      )}
+                                    </div>
+                                    <div className="flex justify-between items-center text-sm text-zinc-400">
+                                      {book.condition}
+                                    </div>
                                   </div>
                                 </Link>
                               </CardContent>
