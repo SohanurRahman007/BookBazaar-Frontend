@@ -1,4 +1,13 @@
-import { Facebook, Github, Instagram, Linkedin } from "lucide-react";
+import { Separator } from "@/components/ui/separator";
+import {
+  Clock,
+  Facebook,
+  Github,
+  HeadphoneOff,
+  Instagram,
+  Linkedin,
+  Shield,
+} from "lucide-react";
 import Link from "next/link";
 import React from "react";
 
@@ -88,6 +97,56 @@ const Footer = () => {
             </div>
           </div>
         </div>
+        {/* featured in the footer */}
+        <>
+          {/* Top Divider */}
+          <Separator className="my-4" />
+
+          <section className="py-6">
+            <div className="container mx-auto px-4">
+              <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div className="flex item-center gap-4 rounded-xl p-6">
+                  <div className="rounded-full p-3">
+                    <Shield className="w-6 h-6" />
+                  </div>
+                  <div>
+                    <h4 className="font-semibold">Secure Transactions</h4>
+                    <p className="text-gray-400 text-sm">
+                      Your transactions are protected with end-to-end
+                      encryption.
+                    </p>
+                  </div>
+                </div>
+                <div className="flex item-center gap-4 rounded-xl p-6">
+                  <div className="rounded-full p-3">
+                    <Clock className="w-6 h-6" />
+                  </div>
+                  <div>
+                    <h4 className="font-semibold">BookBazar Trust</h4>
+                    <p className="text-gray-400 text-sm">
+                      Trusted by thousands of users worldwide for safe buying
+                      and selling.
+                    </p>
+                  </div>
+                </div>
+                <div className="flex item-center gap-4 rounded-xl p-6">
+                  <div className="rounded-full p-3">
+                    <HeadphoneOff className="w-6 h-6" />
+                  </div>
+                  <div>
+                    <h4 className="font-semibold">Customer Support</h4>
+                    <p className="text-gray-400 text-sm">
+                      24/7 support to assist you with any questions or issues.
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </section>
+
+          {/* Bottom Divider */}
+          <Separator className="my-4" />
+        </>
       </div>
     </footer>
   );
