@@ -1,7 +1,9 @@
 "use client";
 
+import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { books } from "@/lib/constant";
+import { ChevronLeftIcon, ChevronRight } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
 import React, { useEffect, useState } from "react";
@@ -95,6 +97,11 @@ export const NewBooks = () => {
                                       {book.condition}
                                     </div>
                                   </div>
+                                  <div className="mt-4">
+                                    <Button className="flex float-end mb-2 bg-gradient-to-r from-yellow-500 to-yellow-600 text-white hover:from-yellow-600 to-yellow-700">
+                                      Buy Now
+                                    </Button>
+                                  </div>
                                 </Link>
                               </CardContent>
                             </Card>
@@ -104,6 +111,20 @@ export const NewBooks = () => {
                   ))}
                 </div>
               </div>
+              {/* scroll buttons */}
+              <Button
+                onClick={prevSlide}
+                className="group absolute top-1/2 left-0 transform -translate-y-1/2 bg-white shadow-md p-2 rounded-full hover:bg-yellow-50 transition-colors"
+              >
+                <ChevronLeftIcon className="h-6 w-6 text-gray-800 group-hover:text-red-500 transition-colors" />
+              </Button>
+
+              <Button
+                onClick={nextSlide}
+                className="group absolute top-1/2 right-0 transform -translate-y-1/2 bg-white shadow-md p-2 rounded-full hover:bg-yellow-50 transition-colors"
+              >
+                <ChevronRight className="h-6 w-6 text-gray-800 group-hover:text-red-500 transition-colors" />
+              </Button>
             </>
           ) : (
             <></>
