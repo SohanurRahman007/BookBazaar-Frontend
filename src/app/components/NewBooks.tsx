@@ -18,7 +18,7 @@ export const NewBooks = () => {
   }, []);
 
   const prevSlide = () => {
-    setCurrentBookSlide((prev) => (prev + 1 + 3) % 3);
+    setCurrentBookSlide((prev) => (prev - 1 + 3) % 3);
   };
 
   const nextSlide = () => {
@@ -38,7 +38,9 @@ export const NewBooks = () => {
   return (
     <section className="bg-gray-50 py-16">
       <div className="container mx-auto px-4">
-        <h3 className="text-3xl font-bold text-center">Newly Added Books </h3>
+        <h3 className="text-3xl font-bold text-center mb-10">
+          Newly Added Books{" "}
+        </h3>
         <div className="relative ">
           {books.length > 0 ? (
             <>
@@ -49,7 +51,7 @@ export const NewBooks = () => {
                     transform: `translateX(-${currentBookSlide * 100}%)`,
                   }}
                 >
-                  {[1, 2, 3].map((slideIndex) => (
+                  {[0, 1, 2].map((slideIndex) => (
                     <div key={slideIndex} className="w-full flex-none">
                       <div className="grid grid-cols-1 gap-6 md:grid-cols-3">
                         {books
@@ -125,9 +127,26 @@ export const NewBooks = () => {
               >
                 <ChevronRight className="h-6 w-6 text-gray-800 group-hover:text-red-500 transition-colors" />
               </Button>
+
+              {/* dot animation */}
+              <div className="flex justify-center space-x-2 mt-8">
+                {[0, 1, 2].map((dot) => (
+                  <button
+                    key={dot}
+                    className={`h-3 w-3 rounded-full ${
+                      currentBookSlide === dot ? "bg-red-500" : "bg-yellow-500"
+                    }`}
+                    onClick={() => setCurrentBookSlide(dot)}
+                  ></button>
+                ))}
+              </div>
             </>
           ) : (
-            <></>
+            <>
+              <h3 className="text-3xl font-semibold text-center">
+                No books available
+              </h3>
+            </>
           )}
         </div>
       </div>
