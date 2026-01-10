@@ -47,8 +47,8 @@ const Footer = () => {
 
             <ul className="space-y-2">
               <li>
-                <Link href="/terms-of-service" className="hover:underline">
-                  Terms of Service
+                <Link href="/terms-of-use" className="hover:underline">
+                  Terms of Use
                 </Link>
               </li>
               <li>
