@@ -1,3 +1,4 @@
+import { Facebook, Github, Instagram, Linkedin } from "lucide-react";
 import Link from "next/link";
 import React from "react";
 
@@ -57,6 +58,34 @@ const Footer = () => {
                 </Link>
               </li>
             </ul>
+          </div>
+          <div>
+            <h3 className="mb-4 text-white text-lg font-semibold">
+              Stay Connected
+            </h3>
+            <div className="mb-4 flex space-x-2">
+              <Link
+                href="https://www.facebook.com/SohanurRahman0007"
+                target="_blank"
+              >
+                <Facebook className="w-6 h-6 hover:text-white transition-colors" />
+              </Link>
+              <Link
+                href="https://www.linkedin.com/in/sohanurrahman007/"
+                target="_blank"
+              >
+                <Linkedin className="w-6 h-6 hover:text-white transition-colors" />
+              </Link>
+              <Link href="https://github.com/SohanurRahman007" target="_blank">
+                <Github className="w-6 h-6 hover:text-white transition-colors" />
+              </Link>
+              <Link
+                href="https://www.instagram.com/sohanuractive007"
+                target="_blank"
+              >
+                <Instagram className="w-6 h-6 hover:text-white transition-colors" />
+              </Link>
+            </div>
           </div>
         </div>
       </div>
