@@ -8,6 +8,7 @@ import {
   Linkedin,
   Shield,
 } from "lucide-react";
+import Image from "next/image";
 import Link from "next/link";
 
 const Footer = () => {
@@ -147,7 +148,32 @@ const Footer = () => {
           <Separator className="my-4" />
         </>
         <div className="text-center text-md mt-4">
-          <h3>© 2026 BookBazar. All rights reserved.</h3>{" "}
+          <div className="flex gap-2 items-center justify-center mb-4">
+            <Image
+              src="/icons/visa.svg"
+              alt="Visa"
+              width={50}
+              height={30}
+              className="brightness-20 filter invert"
+            />
+            <Image
+              src="/icons/paytm.svg"
+              alt="Paytm"
+              width={50}
+              height={30}
+              className="brightness-20 filter invert"
+            />
+            <Image
+              src="/icons/upi.svg"
+              alt="Visa"
+              width={50}
+              height={30}
+              className="brightness-20 filter invert"
+            />
+          </div>
+          <h3>
+            &copy; {new Date().getFullYear()} BookBazar. All rights reserved.
+          </h3>
         </div>
       </div>
     </footer>
