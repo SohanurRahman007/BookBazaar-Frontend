@@ -40,7 +40,7 @@ const Footer = () => {
             <ul className="space-y-2">
               <li>
                 <Link href="/how-it-works" className="hover:underline">
-                  How it Works
+                  How it Works?
                 </Link>
               </li>
               <li>
@@ -100,17 +100,19 @@ const Footer = () => {
         {/* featured in the footer */}
         <>
           {/* Top Divider */}
-          <Separator className="my-4" />
+          <Separator className="my-4 " />
 
           <section className="py-6">
             <div className="container mx-auto px-4">
               <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
                 <div className="flex item-center gap-4 rounded-xl p-6">
                   <div className="rounded-full p-3">
-                    <Shield className="w-6 h-6" />
+                    <Shield className="w-6 h-6 text-red-500" />
                   </div>
                   <div>
-                    <h4 className="font-semibold">Secure Transactions</h4>
+                    <h4 className="font-semibold text-yellow-500">
+                      Secure Transactions
+                    </h4>
                     <p className="text-gray-400 text-sm">
                       Your transactions are protected with end-to-end
                       encryption.
@@ -119,10 +121,12 @@ const Footer = () => {
                 </div>
                 <div className="flex item-center gap-4 rounded-xl p-6">
                   <div className="rounded-full p-3">
-                    <Clock className="w-6 h-6" />
+                    <Clock className="w-6 h-6 text-red-500" />
                   </div>
                   <div>
-                    <h4 className="font-semibold">BookBazar Trust</h4>
+                    <h4 className="font-semibold text-yellow-500">
+                      BookBazar Trust
+                    </h4>
                     <p className="text-gray-400 text-sm">
                       Trusted by thousands of users worldwide for safe buying
                       and selling.
@@ -131,10 +135,12 @@ const Footer = () => {
                 </div>
                 <div className="flex item-center gap-4 rounded-xl p-6">
                   <div className="rounded-full p-3">
-                    <HeadphoneOff className="w-6 h-6" />
+                    <HeadphoneOff className="w-6 h-6 text-red-500" />
                   </div>
                   <div>
-                    <h4 className="font-semibold">Customer Support</h4>
+                    <h4 className="font-semibold text-yellow-500">
+                      Customer Support
+                    </h4>
                     <p className="text-gray-400 text-sm">
                       24/7 support to assist you with any questions or issues.
                     </p>
