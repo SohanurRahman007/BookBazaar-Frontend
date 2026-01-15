@@ -1,3 +1,5 @@
+"use client";
+
 import { books } from "@/lib/constant";
 import React, { useState } from "react";
 import { set } from "react-hook-form";
@@ -47,6 +49,25 @@ function page() {
         .map((cat) => cat.toLowerCase())
         .includes(book.category.toLowerCase());
     return conditionMatch && typeMatch && categoryMatch;
+  });
+
+  const sortedBooks = [...filterBooks].sort((a, b) => {
+    switch (sortOption) {
+      case "newest":
+        return (
+          new Date(b.createdAt).getTime() - new Date(a.createdAt).getTime()
+        );
+      case "oldest":
+        return (
+          new Date(a.createdAt).getTime() - new Date(b.createdAt).getTime()
+        );
+      case "price-low":
+        return a.finalPrice - b.finalPrice;
+      case "price-high":
+        return b.finalPrice - a.finalPrice;
+      default:
+        return 0;
+    }
   });
 
   return <div>page</div>;
