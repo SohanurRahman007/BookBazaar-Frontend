@@ -1,3 +1,4 @@
+import { books } from "@/lib/constant";
 import React, { useState } from "react";
 import { set } from "react-hook-form";
 
@@ -28,6 +29,25 @@ function page() {
     }
     setCurrentPage(1);
   };
+
+  const filterBooks = books.filter((book) => {
+    const conditionMatch =
+      selectedCondition.length === 0 ||
+      selectedCondition
+        .map((cond) => cond.toLowerCase())
+        .includes(book.condition.toLowerCase());
+    const typeMatch =
+      selectedType.length === 0 ||
+      selectedType
+        .map((type) => type.toLowerCase())
+        .includes(book.classType.toLowerCase());
+    const categoryMatch =
+      selectedCategory.length === 0 ||
+      selectedCategory
+        .map((cat) => cat.toLowerCase())
+        .includes(book.category.toLowerCase());
+    return conditionMatch && typeMatch && categoryMatch;
+  });
 
   return <div>page</div>;
 }
