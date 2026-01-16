@@ -2,9 +2,11 @@
 
 import {
   Accordion,
+  AccordionContent,
   AccordionItem,
   AccordionTrigger,
 } from "@/components/ui/accordion";
+import { Checkbox } from "@/components/ui/checkbox";
 import { books, filters } from "@/lib/constant";
 import Link from "next/link";
 import React, { useState } from "react";
@@ -95,11 +97,34 @@ function page() {
               type="multiple"
               className="bg-white p-6 rounded-lg border"
             >
-              {Object.entries(filters).map(([key, value]) => (
+              {Object.entries(filters).map(([key, values]) => (
                 <AccordionItem key={key} value={key}>
                   <AccordionTrigger className="text-lg font-semibold text-blue-500">
                     {key.charAt(0).toUpperCase() + key.slice(1)}
                   </AccordionTrigger>
+
+                  <AccordionContent>
+                    <div className="mt-2 space-y-2">
+                      {values.map((value) => (
+                        <div
+                          key={value}
+                          className="flex items-center space-x-2"
+                        >
+                          <Checkbox
+                            id={value}
+                            checked={
+                              key === "condition"
+                                ? selectedCondition.includes(value)
+                                : key === "classType"
+                                ? selectedType.includes(value)
+                                : selectedCategory.includes(value)
+                            }
+                          />
+                          <span>{value}</span>
+                        </div>
+                      ))}
+                    </div>
+                  </AccordionContent>
                 </AccordionItem>
               ))}
             </Accordion>
