@@ -1,6 +1,7 @@
 "use client";
 
 import { books } from "@/lib/constant";
+import Link from "next/link";
 import React, { useState } from "react";
 import { set } from "react-hook-form";
 
@@ -70,7 +71,18 @@ function page() {
     }
   });
 
-  return <div>page</div>;
+  return (
+    <div className="min-h-screen bg-gray-100">
+      <div className="container mx-auto px-4 py-8">
+        <nav className="mb-4 gap-2 flex items-center text-sm text-muted-foreground">
+          <Link href="/" className="text-primary hover:underline">
+            Home
+          </Link>
+          <span>/</span>
+        </nav>
+      </div>
+    </div>
+  );
 }
 
 export default page;
