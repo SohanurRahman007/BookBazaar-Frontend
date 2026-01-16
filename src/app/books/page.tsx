@@ -74,12 +74,16 @@ function page() {
   return (
     <div className="min-h-screen bg-gray-100">
       <div className="container mx-auto px-4 py-8">
-        <nav className="mb-4 gap-2 flex items-center text-sm text-muted-foreground">
+        <nav className="mb-4 gap-2 flex items-center text-xl text-muted-foreground">
           <Link href="/" className="text-primary hover:underline">
             Home
           </Link>
           <span>/</span>
+          <span>Books</span>
         </nav>
+        <h1 className="text-3xl font-bold mb-8">
+          Find from over 1000s of used books online
+        </h1>
       </div>
     </div>
   );
