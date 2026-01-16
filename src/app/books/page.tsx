@@ -119,6 +119,11 @@ function page() {
                                 ? selectedType.includes(value)
                                 : selectedCategory.includes(value)
                             }
+                            onCheckedChange={() => toggleFilter(key, value)}
+                          />
+                          <label
+                            htmlFor={value}
+                            className="text-ms font-medium leading-none"
                           />
                           <span>{value}</span>
                         </div>
