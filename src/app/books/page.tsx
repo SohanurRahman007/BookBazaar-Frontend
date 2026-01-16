@@ -1,6 +1,11 @@
 "use client";
 
-import { books } from "@/lib/constant";
+import {
+  Accordion,
+  AccordionItem,
+  AccordionTrigger,
+} from "@/components/ui/accordion";
+import { books, filters } from "@/lib/constant";
 import Link from "next/link";
 import React, { useState } from "react";
 import { set } from "react-hook-form";
@@ -84,6 +89,22 @@ function page() {
         <h1 className="text-3xl font-bold mb-8">
           Find from over 1000s of used books online
         </h1>
+        <div className="grid gap-8 md:grid-cols-[280px_1fr]">
+          <div className="space-y-6">
+            <Accordion
+              type="multiple"
+              className="bg-white p-6 rounded-lg border"
+            >
+              {Object.entries(filters).map(([key, value]) => (
+                <AccordionItem key={key} value={key}>
+                  <AccordionTrigger className="text-lg font-semibold text-blue-500">
+                    {key.charAt(0).toUpperCase() + key.slice(1)}
+                  </AccordionTrigger>
+                </AccordionItem>
+              ))}
+            </Accordion>
+          </div>
+        </div>
       </div>
     </div>
   );
