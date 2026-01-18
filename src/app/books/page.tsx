@@ -105,6 +105,7 @@ function page() {
 
                   <AccordionContent>
                     <div className="mt-2 space-y-2">
+                      {/* map for value */}
                       {values.map((value) => (
                         <div
                           key={value}
