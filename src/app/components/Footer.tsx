@@ -119,6 +119,7 @@ const Footer = () => {
                     </p>
                   </div>
                 </div>
+                {/* BookBazar Trust */}
                 <div className="flex item-center gap-4 rounded-xl p-6">
                   <div className="rounded-full p-3">
                     <Clock className="w-6 h-6 text-red-500" />
