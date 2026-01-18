@@ -133,6 +133,7 @@ const Footer = () => {
                     </p>
                   </div>
                 </div>
+                {/* customer support section */}
                 <div className="flex item-center gap-4 rounded-xl p-6">
                   <div className="rounded-full p-3">
                     <HeadphoneOff className="w-6 h-6 text-red-500" />
