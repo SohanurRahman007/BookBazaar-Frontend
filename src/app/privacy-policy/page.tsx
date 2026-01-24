@@ -54,7 +54,7 @@ const PrivacyPolicy = () => {
           </p>
         </div>
 
-        {/* Content Section */}
+        {/* Content Section hare*/}
         <div className="space-y-6">
           {sections.map((section, index) => (
             <div
