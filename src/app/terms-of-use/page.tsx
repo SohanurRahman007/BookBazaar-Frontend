@@ -40,7 +40,7 @@ const TermsOfUse = () => {
   return (
     <div className="min-h-screen bg-gray-50 py-20">
       <div className="max-w-4xl mx-auto px-6">
-        {/* Header Section */}
+        {/* Header Section hare*/}
         <div className="text-center mb-16">
           <div className="inline-flex items-center justify-center p-3 bg-yellow-100 rounded-full mb-4">
             <FileText className="w-8 h-8 text-yellow-500" />
