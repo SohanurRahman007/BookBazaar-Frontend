@@ -181,6 +181,7 @@ const Footer = () => {
             />
           </div>
           <h3>
+            {/* real time  */}
             &copy; {new Date().getFullYear()} BookBazar. All rights reserved.
           </h3>
         </div>
