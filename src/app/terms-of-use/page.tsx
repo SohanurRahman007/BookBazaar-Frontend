@@ -111,7 +111,7 @@ const TermsOfUse = () => {
 
         {/* Footer Note */}
         <p className="text-center text-slate-400 text-sm mt-10">
-          Last updated: January 10, 2026 • © BookBazar Inc.
+          Last updated: {new Date().toLocaleDateString()} • © BookBazar Inc.
         </p>
       </div>
     </div>
