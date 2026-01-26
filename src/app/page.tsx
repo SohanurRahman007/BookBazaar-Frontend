@@ -260,6 +260,7 @@ export default function Home() {
                 className="flex flex-col overflow-hidden transition-all duration-300 hover:shadow-xl"
               >
                 <CardContent className="p-0 flex flex-col h-full">
+                  {/* card  */}
                   <div className="relative h-48 w-full">
                     <Image
                       src={post.imageSrc}
